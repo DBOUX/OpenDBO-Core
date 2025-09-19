@@ -11,6 +11,8 @@ CREATE TABLE IF NOT EXISTS raid_weekly_weapon (
 CREATE TABLE IF NOT EXISTS raid_progression (
     char_id BIGINT PRIMARY KEY,
     progression FLOAT NOT NULL DEFAULT 0,
+    cleared TINYINT(1) NOT NULL DEFAULT 0,           -- 0 = not cleared, 1 = cleared (received weapon)
+    last_cleared_at DATETIME DEFAULT NULL,
     last_updated DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
 
